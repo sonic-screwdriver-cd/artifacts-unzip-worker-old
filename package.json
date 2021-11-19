@@ -1,0 +1,25 @@
+{
+  "name": "screwdriver-artifacts-unzip-worker",
+  "version": "1.0.0",
+  "description": "A resque worker implementation that unzips the ZIP artifacts.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sonic-screwdriver-cd/artifacts-unzip-worker.git"
+  },
+  "author": "",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/sonic-screwdriver-cd/artifacts-unzip-worker/issues"
+  },
+  "homepage": "https://github.com/sonic-screwdriver-cd/artifacts-unzip-worker#readme",
+  "dependencies": {
+    "config": "^3.3.6",
+    "js-yaml": "^4.1.0",
+    "node-resque": "^9.1.1"
+  }
+}
