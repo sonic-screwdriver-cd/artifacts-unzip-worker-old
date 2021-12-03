@@ -20,10 +20,10 @@ const multiWorker = new NodeResque.MultiWorker(
 );
 
 // normal worker emitters
-multiWorker.on('start', (workerId) => {
+multiWorker.on('start', workerId => {
     logger.info(`worker[${workerId}] started`);
 });
-multiWorker.on('end', (workerId) => {
+multiWorker.on('end', workerId => {
     logger.info(`worker[${workerId}] ended`);
 });
 multiWorker.on('cleaning_worker', (workerId, worker) => {
@@ -50,12 +50,12 @@ multiWorker.on('failure', (workerId, queue, job, failure) => {
 multiWorker.on('error', (workerId, queue, job, error) => {
     logger.info(`worker[${workerId}] error ${queue} ${JSON.stringify(job)} >> ${error}`);
 });
-multiWorker.on('pause', (workerId) => {
+multiWorker.on('pause', workerId => {
     logger.info(`worker[${workerId}] paused`);
 });
 
 // multiWorker emitters
-multiWorker.on('internalError', (error) => {
+multiWorker.on('internalError', error => {
     logger.info(error);
 });
 multiWorker.on('multiWorkerAction', (verb, delay) => {
